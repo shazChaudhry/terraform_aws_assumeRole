@@ -11,4 +11,4 @@ source_profile = default
 # This is MFA device of the IAM user in AWS account 1
 # Replace the <AWS_ACCOUNT_1_ID> with you account ID
 mfa_serial = arn:aws:iam::<AWS_ACCOUNT_1_ID>:mfa/<USER_NAME>
-role_session_name = devEngineer
+role_session_name = <USER_NAME>
