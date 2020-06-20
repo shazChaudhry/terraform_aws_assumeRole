@@ -1,6 +1,3 @@
-# AWS_AssumeRole
-Terraform configurations where an IAM user in one AWS account is able to assume an IAM role in another AWS account. The use is then able to create AWS resources in the second AWS account
-=======
 # Inspiration
 
 The purpose of this repo is to learn Terraform by coding the infrastructure in AWS.
@@ -27,7 +24,7 @@ Building on from the video instructions, we will write configurations _(**IaC**)
 ## Assumptions
 
 - Users have been able to follow the demo along and understood the concepts in the above video tutorial 
-- As explained in the tutorial above, users have multiple AWS accounts to experiment with; an initial account to log in to and other accounts where IAM roles will be assumed into. 
+- As explained in the tutorial above, users have multiple AWS accounts to experiment with; an initial account to log in to and other accounts where IAM roles will be assumed into.
   - You might find this KnowledgeIndia tutorial helpful in understanding how to [organize multiple AWS accounts](https://youtu.be/-HsfTwdRxRI)
 - Users have necessary tools installed on their dev machines / laptops i.e. [Terraform](https://www.terraform.io/), [jq](https://stedolan.github.io/jq/) and [AWS CLI](https://aws.amazon.com/cli/) _(this solution has been tested on a MacBook Pro)_.
 
@@ -47,7 +44,7 @@ It is expected that the required setup is already in place:
 ├── README.md
 ├── dev_machine_configs
 │   ├── README.md             --> Instructions required to configure local dev machine
-│   ├── config                --> Update the file with AWS accounts #1 and #2. This will needs to be coppied in "~/.aws/"
+│   ├── config                --> Update the file with user name and AWS accounts #1 & #2. This will needs to be coppied in "~/.aws/"
 │   ├── credentials           --> Update the file with IAM user credentials. This will needs to be coppied in "~/.aws/"
 │   └── getCredentials.sh     --> Update the file with AWS accounts #2 and role name.
 ├── main.tf                   --> Update the "region" value
@@ -58,6 +55,7 @@ It is expected that the required setup is already in place:
 ## 1. Configurations
 
 These configurations are required for an IAM user with MFA enabled in AWS account #1 to be able to assume an IAM role in AWS account #2
+
 - Change to _**`dev_machine_configs`**_ folder of this repo and follow the README instructions.
 
 ## 2. Scripts
@@ -77,6 +75,3 @@ The script allows getting temporary security credentials from AWS account #2 in 
 - With the IAM user, log in to AWS account #1 via [AWS console](https://console.aws.amazon.com/)
 - Switch to the IAM role in AWS account #2 and check the a VPC has been created
 - "`terraform destroy -auto-approve`" Destroy the infrastructure if it is no longer needed
-
-## References
-- TBD
